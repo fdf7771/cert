@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <meta name="viewport" content="width=device-width, user-scalable=no"/>
-      <title>Hello world LivePerson</title>
-   </head>
 
-   <body>
      const appDiv = document.getElementById("app");
 pathToData = "chatTranscript.lines";
 const updateCallback = function(data) {
@@ -68,6 +61,5 @@ console.log("error", err);
 };
 lpTag.agentSDK.init({});
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
-      
-   </body>
-</html>
+     updateCallback, notifyWhenDone); 
+
