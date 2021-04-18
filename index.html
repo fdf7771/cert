@@ -10,6 +10,7 @@
     <title>JSON Test</title>
 </head>
 <body>
+    TEST
     <div id="myData"></div>
     <script>
      var url ="http://www.omdbapi.com/?t=terminator&apikey=c2eec5ec";
@@ -24,10 +25,10 @@
                 console.log('error: ' + err);
             });
         function appendData(data) {
-            var mainContainer = document.getElementById("myData");
+            var mainContainer = document.getElementById("Title");
             for (var i = 0; i < data.length; i++) {
                 var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+                div.innerHTML = 'Name: ' + data[i].Title;
                 mainContainer.appendChild(div);
             }
         }
