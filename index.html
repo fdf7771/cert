@@ -1,10 +1,11 @@
 
-     const appDiv = document.getElementById("app");
+const appDiv = document.getElementById("app");
 pathToData = "chatTranscript.lines";
 const updateCallback = function(data) {
 console.log("***updateCallback****");
 // Do something with the returning data
-// console.log(JSON.stringify(data));
+console.log("JSON DATA----------------------");
+console.log(JSON.stringify(data));
 // const path = data.key;
 const value = data.newValue;
 const index = value.length - 1;
@@ -13,7 +14,8 @@ if (messageObj.source === "visitor") {
 fetch("https://www.omdbapi.com?t=" + messageObj.text + "&apikey=a5599b52")
 .then(response => response.json())
 .then(resut => {
-// console.log(resut)
+console.log("RESULT-------------------------")
+console.log(resut)
 if (resut.Response === "True") {
 appDiv.innerHTML =
 "<div>Title: " +
