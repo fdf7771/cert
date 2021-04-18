@@ -31,6 +31,12 @@
                     document.getElementById("Genre").innerHTML = res.Genre;
 
                     document.getElementById("Plot").innerHTML = res.Plot;
+            
+            var mainContainer = document.getElementById("Title");
+            var div = document.createElement("div");
+            div.innerHTML = 'TITLE: ' + res.Title;
+            mainContainer.appendChild(div);
+            
             })
             .catch(function (err) {
                 console.log('error: ' + err);
@@ -38,10 +44,10 @@
         
         }
         
-    var notifyWhenDone = function(error) {
-    if (err){ console.log("I am inside notifyWhenDone function : "+err);    }
+    var errorMsg = function(error) {
+    if (err){ console.log("-------------- errorMsg function : "+err);    }
     var chatText = "chatTranscript.lines";
-    errorMessage.innerHTML = "Unable to find the movie";
+    errorMessage.innerHTML = "Movie not found.";
     };
     </script>
 </body>
