@@ -10,7 +10,7 @@
     <title>JSON Test</title>
 </head>
 <body>
-    TEST
+    LP CERTIFICATION
     <div id="myData"></div>
     <script>
      var url ="http://www.omdbapi.com/?t=terminator&apikey=c2eec5ec";
@@ -18,20 +18,31 @@
             .then(function (response) {
                 return response.json();
             })
-            .then(function (data) {
-                appendData(data);
+            .then(function(res){
+
+                    document.getElementById("Title").innerHTML = res.Title;
+
+                    document.getElementById("Year").innerHTML = res.Year;
+
+                    document.getElementById("Rated").innerHTML = res.Rated;
+
+                    document.getElementById("Actors").innerHTML = res.Actors;
+
+                    document.getElementById("Genre").innerHTML = res.Genre;
+
+                    document.getElementById("Plot").innerHTML = res.Plot;
             })
             .catch(function (err) {
                 console.log('error: ' + err);
             });
-        function appendData(data) {
-            var mainContainer = document.getElementById("Title");
-            for (var i = 0; i < data.length; i++) {
-                var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].Title;
-                mainContainer.appendChild(div);
-            }
+        
         }
+        
+    var notifyWhenDone = function(error) {
+    if (err){ console.log("I am inside notifyWhenDone function : "+err);    }
+    var chatText = "chatTranscript.lines";
+    errorMessage.innerHTML = "Unable to find the movie";
+    };
     </script>
 </body>
 </html>
