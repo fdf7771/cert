@@ -11,9 +11,9 @@
 </head>
 <body>
     LP CERTIFICATION
-    <div id="myData">1</div>
+    <div id="ver">2</div>
     <script>
-        const appDiv = document.getElementById("app");
+        const appDiv = document.getElementById("ver");
 pathToData = "chatTranscript.lines";
 const updateCallback = function(data) {
 console.log("***updateCallback****");
@@ -33,7 +33,8 @@ const messageObj = value[index];
 .then(resut => {
 console.log("RESULT-------------------------")
 console.log(resut)
-if (resut.Response === "True") {
+//if (resut.Response === "True") 
+{
 appDiv.innerHTML =
 "<div>Title: " +
 resut.Title +
