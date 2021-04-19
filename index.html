@@ -24,7 +24,6 @@ pathToData = "chatTranscript.lines";
 console.log("***updateCallback****");
 // Do something with the returning data
 console.log("JSON DATA----------------------");
-console.log(JSON.stringify(data));
 // const path = data.key;
 const value = data.newValue;
 const index = value.length - 1;
@@ -43,7 +42,8 @@ const messageObj = value[index];
     return response.json()  //we only get here if there is no error
   })
 .then(json => {
-     document.querySelector("#ver").innerText = json.sentence
+        console.log(JSON.stringify(json));
+appDiv.innerHTML += JSON.stringify(json);
 console.log("RESULT-------------------------")
 console.log(json)
 if (json.Response === "True") 
