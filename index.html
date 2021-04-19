@@ -11,7 +11,7 @@
 </head>
 <body>
     LP CERTIFICATION
-    <div id="myData"></div>
+    <div id="myData">1</div>
     <script>
         const appDiv = document.getElementById("app");
 pathToData = "chatTranscript.lines";
@@ -25,7 +25,8 @@ const value = data.newValue;
 const index = value.length - 1;
 const messageObj = value[index];
     var url ="http://www.omdbapi.com/?t=terminator&apikey=c2eec5ec";
-if (messageObj.source === "visitor") {
+//if (messageObj.source === "visitor") 
+{
 //fetch("https://www.omdbapi.com?t=" + messageObj.text + "&apikey=c2eec5ec")
  fetch(url) 
 .then(response => response.json())
