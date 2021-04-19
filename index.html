@@ -18,7 +18,9 @@
         appDiv.innerHTML = "Response init";
         appDiv.innerHTML += " -system check";
 pathToData = "chatTranscript.lines";
+        appDiv.innerHTML += " -set pathToData";
 const updateCallback = function(data) {
+    appDiv.innerHTML += " -update callback";
 console.log("***updateCallback****");
 // Do something with the returning data
 console.log("JSON DATA----------------------");
@@ -27,6 +29,7 @@ console.log(JSON.stringify(data));
 const value = data.newValue;
 const index = value.length - 1;
 const messageObj = value[index];
+    appDiv.innerHTML += " -setting api call";
     var url ="http://www.omdbapi.com/?t=terminator&apikey=c2eec5ec";
 //if (messageObj.source === "visitor") 
     if(true)
