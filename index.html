@@ -31,7 +31,8 @@ const messageObj = value[index];
     if(true)
 {
 //fetch("https://www.omdbapi.com?t=" + messageObj.text + "&apikey=c2eec5ec")
- fetch(url) 
+ appDiv.innerHTML = appDiv+" fetching...";
+    fetch(url) 
 .then(response => {
     if (!response.ok) { 
     throw response }
