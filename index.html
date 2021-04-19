@@ -19,19 +19,25 @@
         //appDiv.innerHTML += " -system check";
 pathToData = "chatTranscript.lines";
         //appDiv.innerHTML += " -set pathToData";
-//const updateCallback = function(data) {
+//
+        const updateCallback = function(data) {
     //appDiv.innerHTML += " -update callback";
 console.log("***updateCallback****");
 // Do something with the returning data
 console.log("JSON DATA----------------------");
-// const path = data.key;
-//const value = data.newValue;
-//const index = value.length - 1;
-//const messageObj = value[index];
+// 
+            const path = data.key;
+//
+            const value = data.newValue;
+//
+            const index = value.length - 1;
+//
+            const messageObj = value[index];
     appDiv.innerHTML += " -setting api call";
     var url ="https://www.omdbapi.com/?t=terminator&apikey=c2eec5ec";
-//if (messageObj.source === "visitor") 
-    if(true)
+//
+            if (messageObj.source === "visitor") 
+    //if(true)
 {
 //fetch("https://www.omdbapi.com?t=" + messageObj.text + "&apikey=c2eec5ec")
  appDiv.innerHTML += " -fetching...";
@@ -84,7 +90,8 @@ console.log(err);
 // called each time the value is updated.
 // If there's an existing value when bind is called - this callback
 // will be called with the existing value
-//callback closing bracket };
+//callback closing bracket 
+        };
 const notifyWhenDone = function(err) {
 if (err) {
 // Do something with the error
