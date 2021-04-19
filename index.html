@@ -13,36 +13,75 @@
     LP CERTIFICATION
     <div id="myData"></div>
     <script>
-     var url ="http://www.omdbapi.com/?t=terminator&apikey=c2eec5ec";
-        fetch(url)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function(res){
+        const appDiv = document.getElementById("app");
+pathToData = "chatTranscript.lines";
+const updateCallback = function(data) {
+console.log("***updateCallback****");
+// Do something with the returning data
+console.log("JSON DATA----------------------");
+console.log(JSON.stringify(data));
+// const path = data.key;
+const value = data.newValue;
+const index = value.length - 1;
+const messageObj = value[index];
+    var url ="http://www.omdbapi.com/?t=terminator&apikey=c2eec5ec";
+if (messageObj.source === "visitor") {
+//fetch("https://www.omdbapi.com?t=" + messageObj.text + "&apikey=c2eec5ec")
+ fetch(url) 
+.then(response => response.json())
+.then(resut => {
+console.log("RESULT-------------------------")
+console.log(resut)
+if (resut.Response === "True") {
+appDiv.innerHTML =
+"<div>Title: " +
+resut.Title +
+"</div> <div>Year: " +
+resut.Year +
+"</div> <div>Rated: " +
+resut.Rated +
+"</div> <div>Released: " +
+resut.Released +
+"</div> <div>Runtime: " +
+resut.Runtime +
+"</div> <div>Genre: " +
+resut.Genre +
+"</div> <div>Director: " +
+resut.Director +
+"</div> <div>Actors: " +
+resut.Actors +
+"</div> <div>Plot: " +
+resut.Plot +
+"</div> <div>Awards: " +
+resut.Awards +
+"</div> <div>imdbRating: " +
+resut.imdbRating +
+"</div>";
+} else {
+appDiv.innerHTML = resut.Error;
+}
+})
+.catch(err => {
+console.log(err);
+});
+}
+// called each time the value is updated.
+// If there's an existing value when bind is called - this callback
+// will be called with the existing value
+};
+const notifyWhenDone = function(err) {
+if (err) {
+// Do something with the error
+console.log("error", err);
+}
+// called when the bind is completed successfully,
+// or when the action terminated with an error.
+};
+lpTag.agentSDK.init({});
+lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+     updateCallback, notifyWhenDone); 
 
-                    document.getElementById("Title").innerHTML = res.Title;
 
-                    document.getElementById("Year").innerHTML = res.Year;
-
-                    document.getElementById("Rated").innerHTML = res.Rated;
-
-                    document.getElementById("Actors").innerHTML = res.Actors;
-
-                    document.getElementById("Genre").innerHTML = res.Genre;
-
-                    document.getElementById("Plot").innerHTML = res.Plot;
-            
-            var mainContainer = document.getElementById("Title");
-            var div = document.createElement("div");
-            div.innerHTML = 'TITLE: ' + res.Title;
-            mainContainer.appendChild(div);
-            
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
-        
-        }
         
     var errorMsg = function(error) {
     if (err){ console.log("-------------- errorMsg function : "+err);    }
