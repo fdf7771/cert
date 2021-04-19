@@ -16,7 +16,7 @@
     <script>
         const appDiv = document.getElementById("appDiv");
         appDiv.innerHTML = "Response init";
-        appDiv.innerHTML = appDiv+" -system check";
+        appDiv.innerHTML += " -system check";
 pathToData = "chatTranscript.lines";
 const updateCallback = function(data) {
 console.log("***updateCallback****");
@@ -32,7 +32,7 @@ const messageObj = value[index];
     if(true)
 {
 //fetch("https://www.omdbapi.com?t=" + messageObj.text + "&apikey=c2eec5ec")
- appDiv.innerHTML = appDiv+" fetching...";
+ appDiv.innerHTML += " -fetching...";
     fetch(url) 
 .then(response => {
     if (!response.ok) { 
@@ -46,7 +46,7 @@ console.log(json)
 if (json.Response === "True") 
 {
    
-appDiv.innerHTML =
+appDiv.innerHTML +=
 "<div>Title: " +
 json.Title +
 "</div> <div>Year: " +
