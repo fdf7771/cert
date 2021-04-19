@@ -26,6 +26,7 @@ const index = value.length - 1;
 const messageObj = value[index];
     var url ="http://www.omdbapi.com/?t=terminator&apikey=c2eec5ec";
 //if (messageObj.source === "visitor") 
+    if(true)
 {
 //fetch("https://www.omdbapi.com?t=" + messageObj.text + "&apikey=c2eec5ec")
  fetch(url) 
@@ -40,9 +41,7 @@ console.log("RESULT-------------------------")
 console.log(json)
 if (json.Response === "True") 
 {
-    </script>
-        <div id="test">Title <script> </script></div>
-        <script>
+   
 appDiv.innerHTML =
 "<div>Title: " +
 json.Title +
