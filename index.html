@@ -30,40 +30,40 @@ const messageObj = value[index];
 //fetch("https://www.omdbapi.com?t=" + messageObj.text + "&apikey=c2eec5ec")
  fetch(url) 
 .then(response => response.json())
-.then(resut => {
+.then(json => {
 console.log("RESULT-------------------------")
-console.log(resut)
-//if (resut.Response === "True") 
+console.log(json)
+//if (json.Response === "True") 
 {
     </script>
-        <div id="test">Title <script>resut.Title </script></div>
+        <div id="test">Title <script>json.Title </script></div>
         <script>
 appDiv.innerHTML =
 "<div>Title: " +
-resut.Title +
+json.Title +
 "</div> <div>Year: " +
-resut.Year +
+json.Year +
 "</div> <div>Rated: " +
-resut.Rated +
+json.Rated +
 "</div> <div>Released: " +
-resut.Released +
+json.Released +
 "</div> <div>Runtime: " +
-resut.Runtime +
+json.Runtime +
 "</div> <div>Genre: " +
-resut.Genre +
+json.Genre +
 "</div> <div>Director: " +
-resut.Director +
+json.Director +
 "</div> <div>Actors: " +
-resut.Actors +
+json.Actors +
 "</div> <div>Plot: " +
-resut.Plot +
+json.Plot +
 "</div> <div>Awards: " +
-resut.Awards +
+json.Awards +
 "</div> <div>imdbRating: " +
-resut.imdbRating +
+json.imdbRating +
 "</div>";
 } else {
-appDiv.innerHTML = resut.Error;
+appDiv.innerHTML = json.Error;
 }
 })
 .catch(err => {
