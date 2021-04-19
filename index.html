@@ -15,12 +15,12 @@
     <div id="appDiv"></div>
     <script>
         const appDiv = document.getElementById("appDiv");
-        appDiv.innerHTML = "Response init";
-        appDiv.innerHTML += " -system check";
+        //appDiv.innerHTML = "Response init";
+        //appDiv.innerHTML += " -system check";
 pathToData = "chatTranscript.lines";
-        appDiv.innerHTML += " -set pathToData";
+        //appDiv.innerHTML += " -set pathToData";
 //const updateCallback = function(data) {
-    appDiv.innerHTML += " -update callback";
+    //appDiv.innerHTML += " -update callback";
 console.log("***updateCallback****");
 // Do something with the returning data
 console.log("JSON DATA----------------------");
@@ -43,7 +43,7 @@ console.log("JSON DATA----------------------");
   })
 .then(json => {
         console.log(JSON.stringify(json));
-appDiv.innerHTML += JSON.stringify(json);
+//appDiv.innerHTML += JSON.stringify(json);
 console.log("RESULT-------------------------")
 console.log(json)
 if (json.Response === "True") 
