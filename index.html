@@ -11,9 +11,10 @@
 </head>
 <body>
     LP CERTIFICATION
-    <div id="ver">10</div>
+    <div id="ver">140</div>
     <script>
-        const appDiv = document.getElementById("ver");
+        const appDiv = document.getElementById("appDiv");
+        appDiv.innerHTML = "Response init";
 pathToData = "chatTranscript.lines";
 const updateCallback = function(data) {
 console.log("***updateCallback****");
