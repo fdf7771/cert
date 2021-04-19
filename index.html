@@ -11,7 +11,7 @@
 </head>
 <body>
     LP CERTIFICATION
-    <div id="ver">4</div>
+    <div id="ver">5</div>
     <script>
         const appDiv = document.getElementById("ver");
 pathToData = "chatTranscript.lines";
@@ -31,12 +31,13 @@ const messageObj = value[index];
  fetch(url) 
 .then(response => response.json())
 .then(json => {
+     this.users = json;
 console.log("RESULT-------------------------")
 console.log(json)
 //if (json.Response === "True") 
 {
     </script>
-        <div id="test">Title <script>json.Title </script></div>
+        <div id="test">Title <script>this.users </script></div>
         <script>
 appDiv.innerHTML =
 "<div>Title: " +
